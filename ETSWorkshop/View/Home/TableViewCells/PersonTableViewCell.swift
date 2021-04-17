@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PhoneNumberKit
 
 class PersonTableViewCell: UITableViewCell {
 
@@ -24,11 +25,26 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet weak var noteContainerView: UIView!
     @IBOutlet weak var noteLabel: UILabel!
     
+    let phoneNumberKit = PhoneNumberKit()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         initViews()
+        setFont()
         setBorders()
+    }
+    
+    func setFont() {
+        nameLabel.font = FontFace.mediumFont(size: 17)
+        birthdayTitleLabel.font = FontFace.regularFont(size: 14)
+        emailTitleLabel.font = FontFace.regularFont(size: 14)
+        phoneNumberTitleLabel.font = FontFace.regularFont(size: 14)
+        noteTitleLabel.font = FontFace.regularFont(size: 14)
+        birthdayLabel.font = FontFace.mediumFont(size: 17)
+        emailLabel.font = FontFace.mediumFont(size: 17)
+        phoneNumberLabel.font = FontFace.mediumFont(size: 17)
+        noteLabel.font = FontFace.mediumFont(size: 17)
     }
     
     func initViews() {
@@ -46,10 +62,25 @@ class PersonTableViewCell: UITableViewCell {
         nameLabel.text = [person.name ?? "", person.surname ?? ""].joined(separator: " ")
         birthdayLabel.text = person.birthdatTimeStamp?.convertToDateString()
         emailLabel.text = person.email
-        phoneNumberLabel.text = person.phoneNumber
+        set(person.phoneNumber)
+        
         
         if !person.isCollabsed{
             noteLabel.text = person.note
         }
+    }
+    
+    func set(_ phoneNumber: String?)  {
+        DispatchQueue.main.async {
+            do {
+                let phoneNumber = try self.phoneNumberKit.parse(phoneNumber ?? "")
+                self.phoneNumberLabel.text = self.phoneNumberKit.format(phoneNumber, toType: .international)
+            }
+            catch {
+                print("Generic parser error")
+                self.phoneNumberLabel.text = nil
+            }
+        }
+        
     }
 }

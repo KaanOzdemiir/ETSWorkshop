@@ -8,6 +8,7 @@
 import Foundation
 
 class PersonData {
+    var id: String
     var name: String?
     var surname: String?
     var birthdatTimeStamp: TimeInterval?
@@ -17,6 +18,7 @@ class PersonData {
     var isCollabsed: Bool = true
     
     init(
+        id: String,
         name: String?,
         surname: String?,
         birthdatTimeStamp: TimeInterval?,
@@ -24,6 +26,7 @@ class PersonData {
         phoneNumber: String?,
         note: String?
     ) {
+        self.id = id
         self.name = name
         self.surname = surname
         self.birthdatTimeStamp = birthdatTimeStamp

@@ -23,6 +23,19 @@
 		F7991B3F262B10A2003CE562 /* Date+Extensitons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B3E262B10A2003CE562 /* Date+Extensitons.swift */; };
 		F7991B44262B2665003CE562 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B43262B2665003CE562 /* String+Extensions.swift */; };
 		F7991B47262B2825003CE562 /* RegexPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B46262B2825003CE562 /* RegexPattern.swift */; };
+		F7991B5E262B5DBB003CE562 /* MessageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B5D262B5DBB003CE562 /* MessageVC.swift */; };
+		F7991B66262B641F003CE562 /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7991B62262B641F003CE562 /* Rubik-Regular.ttf */; };
+		F7991B67262B641F003CE562 /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7991B63262B641F003CE562 /* Rubik-Medium.ttf */; };
+		F7991B68262B641F003CE562 /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7991B64262B641F003CE562 /* Rubik-Bold.ttf */; };
+		F7991B69262B641F003CE562 /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7991B65262B641F003CE562 /* Rubik-SemiBold.ttf */; };
+		F7991B78262B64DC003CE562 /* FontFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B77262B64DC003CE562 /* FontFace.swift */; };
+		F7991CF7262B6DB0003CE562 /* ETSLabelTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991CF6262B6DB0003CE562 /* ETSLabelTextFieldView.swift */; };
+		F7991CFA262B6DBC003CE562 /* ETSLabelTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7991CF9262B6DBC003CE562 /* ETSLabelTextFieldView.xib */; };
+		F7991D03262B6FC0003CE562 /* ETSLabelDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991D02262B6FC0003CE562 /* ETSLabelDatePickerView.swift */; };
+		F7991D07262B6FCC003CE562 /* ETSLabelDatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7991D06262B6FCC003CE562 /* ETSLabelDatePickerView.xib */; };
+		F7991D0B262B70D5003CE562 /* ETSLabelPhoneTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991D0A262B70D5003CE562 /* ETSLabelPhoneTextFieldView.swift */; };
+		F7991D0F262B70DB003CE562 /* ETSLabelPhoneTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7991D0E262B70DB003CE562 /* ETSLabelPhoneTextFieldView.xib */; };
+		F7991D22262B8814003CE562 /* TextField+Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991D21262B8814003CE562 /* TextField+Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +58,19 @@
 		F7991B3E262B10A2003CE562 /* Date+Extensitons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensitons.swift"; sourceTree = "<group>"; };
 		F7991B43262B2665003CE562 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		F7991B46262B2825003CE562 /* RegexPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPattern.swift; sourceTree = "<group>"; };
+		F7991B5D262B5DBB003CE562 /* MessageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVC.swift; sourceTree = "<group>"; };
+		F7991B62262B641F003CE562 /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
+		F7991B63262B641F003CE562 /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
+		F7991B64262B641F003CE562 /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
+		F7991B65262B641F003CE562 /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
+		F7991B77262B64DC003CE562 /* FontFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontFace.swift; sourceTree = "<group>"; };
+		F7991CF6262B6DB0003CE562 /* ETSLabelTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSLabelTextFieldView.swift; sourceTree = "<group>"; };
+		F7991CF9262B6DBC003CE562 /* ETSLabelTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETSLabelTextFieldView.xib; sourceTree = "<group>"; };
+		F7991D02262B6FC0003CE562 /* ETSLabelDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSLabelDatePickerView.swift; sourceTree = "<group>"; };
+		F7991D06262B6FCC003CE562 /* ETSLabelDatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETSLabelDatePickerView.xib; sourceTree = "<group>"; };
+		F7991D0A262B70D5003CE562 /* ETSLabelPhoneTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSLabelPhoneTextFieldView.swift; sourceTree = "<group>"; };
+		F7991D0E262B70DB003CE562 /* ETSLabelPhoneTextFieldView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ETSLabelPhoneTextFieldView.xib; sourceTree = "<group>"; };
+		F7991D21262B8814003CE562 /* TextField+Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField+Extentions.swift"; sourceTree = "<group>"; };
 		FDB8DDA2219227834AC1B511 /* Pods_ETSWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -98,12 +124,12 @@
 		F70A03D6262A0DFF0016250F /* ETSWorkshop */ = {
 			isa = PBXGroup;
 			children = (
-				F7991B3D262B1090003CE562 /* Helpers */,
-				F70A03EF262A0F790016250F /* ViewModel */,
-				F70A03EE262A0F740016250F /* View */,
-				F70A03ED262A0F700016250F /* Model */,
-				F70A03F0262A0F890016250F /* Supporting Files */,
 				F70A03DD262A0DFF0016250F /* Main.storyboard */,
+				F70A03ED262A0F700016250F /* Model */,
+				F70A03EE262A0F740016250F /* View */,
+				F70A03F0262A0F890016250F /* Supporting Files */,
+				F7991B3D262B1090003CE562 /* Helpers */,
+				F7991B60262B6404003CE562 /* Resource */,
 			);
 			path = ETSWorkshop;
 			sourceTree = "<group>";
@@ -121,6 +147,7 @@
 			children = (
 				F7991B0A262AF859003CE562 /* Home */,
 				F7991B08262AF850003CE562 /* Detail */,
+				F7991B72262B64B6003CE562 /* Message */,
 				F7991B41262B1168003CE562 /* Custom Views */,
 			);
 			path = View;
@@ -157,8 +184,8 @@
 		F7991B08262AF850003CE562 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				F7991B0C262AF871003CE562 /* PersonDetailVC.swift */,
-				F7991B3A262B0CEF003CE562 /* PersonDetailViewModel.swift */,
+				F7991B6D262B6497003CE562 /* ViewModel */,
+				F7991B70262B64A4003CE562 /* Controller */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -166,8 +193,9 @@
 		F7991B0A262AF859003CE562 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F70A03EF262A0F790016250F /* ViewModel */,
+				F7991B6B262B648D003CE562 /* Controller */,
 				F7991AFC262A3619003CE562 /* TableViewCells */,
-				F70A03DB262A0DFF0016250F /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -175,9 +203,11 @@
 		F7991B3D262B1090003CE562 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				F7991B76262B64CB003CE562 /* Font Face */,
 				F7991B3E262B10A2003CE562 /* Date+Extensitons.swift */,
 				F7991B43262B2665003CE562 /* String+Extensions.swift */,
 				F7991B46262B2825003CE562 /* RegexPattern.swift */,
+				F7991D21262B8814003CE562 /* TextField+Extentions.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -185,9 +215,114 @@
 		F7991B41262B1168003CE562 /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				F7991B1D262B013C003CE562 /* ETSGradientButton.swift */,
+				F7991D11262B7175003CE562 /* ETSGradientButton */,
+				F7991CFC262B6F74003CE562 /* ETSLabelTextFieldView */,
+				F7991CFF262B6F7F003CE562 /* ETSLabelDatePickerView */,
+				F7991D09262B70C2003CE562 /* ETSLabelPhoneTextFieldView */,
 			);
 			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		F7991B60262B6404003CE562 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B61262B6409003CE562 /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		F7991B61262B6409003CE562 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B64262B641F003CE562 /* Rubik-Bold.ttf */,
+				F7991B63262B641F003CE562 /* Rubik-Medium.ttf */,
+				F7991B62262B641F003CE562 /* Rubik-Regular.ttf */,
+				F7991B65262B641F003CE562 /* Rubik-SemiBold.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		F7991B6B262B648D003CE562 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F70A03DB262A0DFF0016250F /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F7991B6D262B6497003CE562 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B3A262B0CEF003CE562 /* PersonDetailViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F7991B70262B64A4003CE562 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B0C262AF871003CE562 /* PersonDetailVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F7991B72262B64B6003CE562 /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B74262B64BF003CE562 /* Controller */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		F7991B74262B64BF003CE562 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B5D262B5DBB003CE562 /* MessageVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F7991B76262B64CB003CE562 /* Font Face */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B77262B64DC003CE562 /* FontFace.swift */,
+			);
+			path = "Font Face";
+			sourceTree = "<group>";
+		};
+		F7991CFC262B6F74003CE562 /* ETSLabelTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				F7991CF6262B6DB0003CE562 /* ETSLabelTextFieldView.swift */,
+				F7991CF9262B6DBC003CE562 /* ETSLabelTextFieldView.xib */,
+			);
+			path = ETSLabelTextFieldView;
+			sourceTree = "<group>";
+		};
+		F7991CFF262B6F7F003CE562 /* ETSLabelDatePickerView */ = {
+			isa = PBXGroup;
+			children = (
+				F7991D02262B6FC0003CE562 /* ETSLabelDatePickerView.swift */,
+				F7991D06262B6FCC003CE562 /* ETSLabelDatePickerView.xib */,
+			);
+			path = ETSLabelDatePickerView;
+			sourceTree = "<group>";
+		};
+		F7991D09262B70C2003CE562 /* ETSLabelPhoneTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				F7991D0A262B70D5003CE562 /* ETSLabelPhoneTextFieldView.swift */,
+				F7991D0E262B70DB003CE562 /* ETSLabelPhoneTextFieldView.xib */,
+			);
+			path = ETSLabelPhoneTextFieldView;
+			sourceTree = "<group>";
+		};
+		F7991D11262B7175003CE562 /* ETSGradientButton */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B1D262B013C003CE562 /* ETSGradientButton.swift */,
+			);
+			path = ETSGradientButton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,9 +385,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				F70A03E4262A0E000016250F /* LaunchScreen.storyboard in Resources */,
+				F7991D0F262B70DB003CE562 /* ETSLabelPhoneTextFieldView.xib in Resources */,
 				F70A03E1262A0E000016250F /* Assets.xcassets in Resources */,
+				F7991CFA262B6DBC003CE562 /* ETSLabelTextFieldView.xib in Resources */,
 				F7991B00262A3629003CE562 /* PersonTableViewCell.xib in Resources */,
+				F7991D07262B6FCC003CE562 /* ETSLabelDatePickerView.xib in Resources */,
+				F7991B67262B641F003CE562 /* Rubik-Medium.ttf in Resources */,
+				F7991B68262B641F003CE562 /* Rubik-Bold.ttf in Resources */,
+				F7991B66262B641F003CE562 /* Rubik-Regular.ttf in Resources */,
 				F70A03DF262A0DFF0016250F /* Main.storyboard in Resources */,
+				F7991B69262B641F003CE562 /* Rubik-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,10 +451,16 @@
 				F7991B3F262B10A2003CE562 /* Date+Extensitons.swift in Sources */,
 				F7991AF6262A3194003CE562 /* PersonData.swift in Sources */,
 				F70A03DC262A0DFF0016250F /* HomeViewController.swift in Sources */,
+				F7991D03262B6FC0003CE562 /* ETSLabelDatePickerView.swift in Sources */,
+				F7991B5E262B5DBB003CE562 /* MessageVC.swift in Sources */,
 				F7991B1E262B013C003CE562 /* ETSGradientButton.swift in Sources */,
 				F7991B0D262AF871003CE562 /* PersonDetailVC.swift in Sources */,
 				F7991B3B262B0CEF003CE562 /* PersonDetailViewModel.swift in Sources */,
 				F70A03D8262A0DFF0016250F /* AppDelegate.swift in Sources */,
+				F7991D0B262B70D5003CE562 /* ETSLabelPhoneTextFieldView.swift in Sources */,
+				F7991B78262B64DC003CE562 /* FontFace.swift in Sources */,
+				F7991CF7262B6DB0003CE562 /* ETSLabelTextFieldView.swift in Sources */,
+				F7991D22262B8814003CE562 /* TextField+Extentions.swift in Sources */,
 				F7991AFF262A3629003CE562 /* PersonTableViewCell.swift in Sources */,
 				F7991AF9262A3210003CE562 /* HomeViewModel.swift in Sources */,
 				F7991B47262B2825003CE562 /* RegexPattern.swift in Sources */,

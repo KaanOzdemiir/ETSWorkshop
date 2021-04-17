@@ -21,7 +21,7 @@ class PersonDetailViewModel {
     var mode: ScreenMode = .new
     let rxPersonUpdated = PublishSubject<(person: PersonData?, mode: ScreenMode)>()
     let phoneNumberKit = PhoneNumberKit()
-    
+    var messageVC: MessageVC?
     
 
     init(person: PersonData?, mode: ScreenMode) {
@@ -50,5 +50,25 @@ class PersonDetailViewModel {
             print("Generic parser error")
         }
         return nil
+    }
+    
+    func show(mode: MessageMode, duration: Double = 1.2, complationHandler: @escaping(() -> Void)) {
+        switch mode {
+        case .success(let message):
+            messageVC?.messageLabel.text = message
+            messageVC?.imageView.image = #imageLiteral(resourceName: "ic_thick")
+            DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                complationHandler()
+            }
+        case .error(let error):
+            messageVC?.messageLabel.text = error
+            messageVC?.imageView.image = #imageLiteral(resourceName: "ic_cross").withRenderingMode(.alwaysTemplate)
+            DispatchQueue.main.asyncAfter(deadline: .now() + duration) {
+                complationHandler()
+            }
+        case .unknown:
+            complationHandler()
+            break
+        }
     }
 }

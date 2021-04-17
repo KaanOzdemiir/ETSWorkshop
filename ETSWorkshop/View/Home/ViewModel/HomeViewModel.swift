@@ -41,8 +41,9 @@ class HomeViewModel {
     }
     
     func fetchPersons() -> [PersonData] {
-        let persons = [
+        self.persons = [
             PersonData(
+                id: UUID().uuidString,
                 name: "Kaan",
                 surname: "Özdemir",
                 birthdatTimeStamp: 1206506810,
@@ -51,31 +52,44 @@ class HomeViewModel {
                 note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             ),
             PersonData(
+                id: UUID().uuidString,
                 name: "Alper",
                 surname: "Büyük",
                 birthdatTimeStamp: 1506506810,
                 email: "etstur@etstur.com",
-                phoneNumber: "+905111111111",
+                phoneNumber: "+905557123212",
                 note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             ),
             PersonData(
+                id: UUID().uuidString,
                 name: "Ali",
                 surname: "Tunç",
                 birthdatTimeStamp: 1506506810,
                 email: "etstur@etstur.com",
-                phoneNumber: "+905222222222",
+                phoneNumber: "+905451213587",
                 note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             ),
             PersonData(
+                id: UUID().uuidString,
                 name: "Ayşe",
                 surname: "Bolu",
                 birthdatTimeStamp: 1506506810,
                 email: "etstur@etstur.com",
-                phoneNumber: "+905333333333",
+                phoneNumber: "+905436457372",
                 note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             )
-        ]
-        return persons.sorted(by: {$0.name ?? "" < $1.name ?? ""})
+        ].sorted(by: {
+            $0.name ?? "" < $1.name ?? ""
+        })
+        return self.persons
+    }
+    
+    func update(_ person: PersonData, indexPath: IndexPath) {
+        if isSearching{
+            filteredPersons[indexPath.section] = person
+        }else{
+            persons[indexPath.section] = person
+        }
     }
     
     func fetchIndexTitles() -> [String] {

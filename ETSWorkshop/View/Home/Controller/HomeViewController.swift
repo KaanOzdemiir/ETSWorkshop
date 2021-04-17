@@ -17,7 +17,11 @@ class HomeViewController: UIViewController {
     
     // MARK: IBOutlets
     @IBOutlet weak var navigationTitleLabel: UILabel!
-    @IBOutlet weak var searchTextField: UITextField!
+    @IBOutlet weak var searchTextField: UITextField!{
+        didSet{
+            searchTextField.setupLeftImage(imageName: "ic_search")
+        }
+    }
     @IBOutlet weak var tableView: UITableView!{
         didSet{
             tableView.register(UINib(nibName: PersonTableViewCell.cellIdentifier, bundle: nil), forCellReuseIdentifier: PersonTableViewCell.cellIdentifier)
@@ -26,11 +30,20 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var addButton: UIButton!
     
+    override var prefersStatusBarHidden: Bool{
+        return true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setFont()
         configureSearchProcess()
+    }
+    
+    func setFont() {
+        navigationTitleLabel.font = FontFace.mediumFont(size: 36)
+        searchTextField.font = FontFace.regularFont(size: 14)
     }
 }
 
@@ -54,12 +67,15 @@ extension HomeViewController: UITableViewDataSource{
         return cell
     }
     
-    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return viewModel.fetchIndexTitles()
+    }
 }
 
 extension HomeViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        view.endEditing(true)
         performSegue(withIdentifier: "SeguePersonDetailVC", sender: viewModel.getPersonBy(indexPath))
     }
     
@@ -82,8 +98,8 @@ extension HomeViewController{
 extension HomeViewController{
     @objc func toggleCell(_ gesture: UITapGestureRecognizer) {
         if let nameLabel = gesture.view as? UILabel{
-            
-            let indexPath = IndexPath(row: nameLabel.tag, section: 0)
+            view.endEditing(true)
+            let indexPath = IndexPath(row: 0, section: nameLabel.tag)
             viewModel.toggleCell(index: indexPath.section)
             tableView?.beginUpdates()
             tableView?.reloadRows(at: [indexPath], with: .fade)
@@ -130,6 +146,7 @@ extension HomeViewController{
     }
 }
 
+// MARK: Segues
 extension HomeViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
@@ -158,15 +175,11 @@ extension HomeViewController{
             case .update:
                 if let lastSelectedIndexPath = self.viewModel.lastSelectedIndexPath, let updatedPerson = data.person{
                     updatedPerson.isCollabsed = false
-                    self.viewModel.persons[lastSelectedIndexPath.row] = updatedPerson
+                    self.viewModel.update(updatedPerson, indexPath: lastSelectedIndexPath)
                     self.tableView.reloadRows(at: [lastSelectedIndexPath], with: .none)
                 }
             }
             
         }).disposed(by: viewModel.disposeBag)
-    }
-    
-    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-        return viewModel.fetchIndexTitles()
     }
 }

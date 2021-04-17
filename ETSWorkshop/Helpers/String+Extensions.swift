@@ -13,4 +13,11 @@ extension String{
         let nameRegex = NSPredicate(format:"SELF MATCHES %@", pattern)
         return nameRegex.evaluate(with: self)
     }
+    
+    func toTimeInterval(format: String = "dd / MM / yyyy") -> TimeInterval? {
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = format
+        return formatter.date(from: self)?.timeIntervalSince1970
+    }
 }
