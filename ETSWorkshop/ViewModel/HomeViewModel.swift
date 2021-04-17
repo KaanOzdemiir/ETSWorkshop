@@ -15,6 +15,10 @@ class HomeViewModel {
         persons = fetchPersons()
     }
     
+    func toggleCell(index: Int) {
+        persons[index].isCollabsed = !persons[index].isCollabsed
+    }
+    
     func fetchPersons() -> [PersonData] {
         let persons = [
             PersonData(

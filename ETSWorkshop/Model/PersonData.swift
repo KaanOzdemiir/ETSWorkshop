@@ -14,4 +14,5 @@ struct PersonData {
     var email: String?
     var phoneNumber: String?
     var note: String?
+    var isCollabsed: Bool = true
 }

@@ -12,6 +12,7 @@ class PersonTableViewCell: UITableViewCell {
     static let cellIdentifier = "PersonTableViewCell"
     
     // MARK: IBOutlets
+    @IBOutlet weak var detailContainerStackView: UIStackView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var birthdayTitleLabel: UILabel!
     @IBOutlet weak var birthdayLabel: UILabel!
@@ -26,7 +27,12 @@ class PersonTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        initViews()
         setBorders()
+    }
+    
+    func initViews() {
+        detailContainerStackView.isHidden = true
     }
     
     func setBorders() {
@@ -35,9 +41,14 @@ class PersonTableViewCell: UITableViewCell {
     }
     
     func setWith(_ person: PersonData) {
+        detailContainerStackView.isHidden = person.isCollabsed
+        
         nameLabel.text = [person.name ?? "", person.surname ?? ""].joined(separator: " ")
-        birthdayLabel.text = "\(person.birthdatTimeStamp!)"
-        emailLabel.text = person.email
-        phoneNumberLabel.text = person.phoneNumber
+        
+        if !person.isCollabsed{
+            birthdayLabel.text = "\(person.birthdatTimeStamp!)"
+            emailLabel.text = person.email
+            phoneNumberLabel.text = person.phoneNumber
+        }
     }
 }

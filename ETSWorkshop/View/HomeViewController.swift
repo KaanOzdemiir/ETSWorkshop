@@ -11,6 +11,8 @@ class HomeViewController: UIViewController {
 
     let viewModel = HomeViewModel()
     
+    var toggleTapGesture: UITapGestureRecognizer!
+    
     // MARK: IBOutlets
     @IBOutlet weak var navigationTitleLabel: UILabel!
     @IBOutlet weak var searchTextField: UITextField!
@@ -36,6 +38,12 @@ extension HomeViewController: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonTableViewCell.cellIdentifier, for: indexPath) as! PersonTableViewCell
+        
+        // Addting Tap Gesture to name label
+        toggleTapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleCell))
+        cell.nameLabel.addGestureRecognizer(toggleTapGesture)
+        cell.nameLabel.tag = indexPath.row
+        
         let person = viewModel.persons[indexPath.row]
         cell.setWith(person)
         return cell
@@ -64,3 +72,15 @@ extension HomeViewController{
     }
 }
 
+extension HomeViewController{
+    @objc func toggleCell(_ gesture: UITapGestureRecognizer) {
+        if let nameLabel = gesture.view as? UILabel{
+            
+            let indexPath = IndexPath(row: nameLabel.tag, section: 0)
+            viewModel.toggleCell(index: indexPath.row)
+            tableView?.beginUpdates()
+            tableView?.reloadRows(at: [indexPath], with: .fade)
+            tableView?.endUpdates()
+        }
+    }
+}
