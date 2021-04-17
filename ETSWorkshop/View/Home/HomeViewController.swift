@@ -36,6 +36,10 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.getNumberOfRowInSection()
     }
     
@@ -45,7 +49,7 @@ extension HomeViewController: UITableViewDataSource{
         // Addting Tap Gesture to name label
         toggleTapGesture = UITapGestureRecognizer(target: self, action: #selector(toggleCell))
         cell.nameLabel.addGestureRecognizer(toggleTapGesture)
-        cell.nameLabel.tag = indexPath.row
+        cell.nameLabel.tag = indexPath.section
         cell.setWith(viewModel.getPersonBy(indexPath))
         return cell
     }
@@ -56,6 +60,7 @@ extension HomeViewController: UITableViewDataSource{
 extension HomeViewController: UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "SeguePersonDetailVC", sender: viewModel.getPersonBy(indexPath))
     }
     
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
@@ -70,6 +75,7 @@ extension HomeViewController: UITableViewDelegate{
 extension HomeViewController{
     
     @IBAction func addButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "SeguePersonDetailVC", sender: nil)
     }
 }
 
@@ -78,7 +84,7 @@ extension HomeViewController{
         if let nameLabel = gesture.view as? UILabel{
             
             let indexPath = IndexPath(row: nameLabel.tag, section: 0)
-            viewModel.toggleCell(index: indexPath.row)
+            viewModel.toggleCell(index: indexPath.section)
             tableView?.beginUpdates()
             tableView?.reloadRows(at: [indexPath], with: .fade)
             tableView?.endUpdates()
@@ -121,5 +127,46 @@ extension HomeViewController{
                 self.tableView.reloadData()
             })
             .disposed(by: viewModel.disposeBag)
+    }
+}
+
+extension HomeViewController{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "SeguePersonDetailVC":
+            
+            let person = sender as? PersonData
+            let vc = segue.destination as? PersonDetailVC
+            vc?.viewModel = PersonDetailViewModel(person: person, mode: person == nil ? .new : .update)
+            subscribePersonDataUpdate(vc: vc)
+            
+        default:
+            break
+        }
+    }
+    
+    func subscribePersonDataUpdate(vc: PersonDetailVC?) {
+        vc?.viewModel.rxPersonUpdated.single().subscribe(onNext: { [weak self] (data) in
+            guard let self = self else { return }
+            switch data.mode {
+            case .new:
+                guard let newPerson = data.person else {
+                    return
+                }
+                self.viewModel.persons.append(newPerson)
+                self.tableView.reloadData()
+            case .update:
+                if let lastSelectedIndexPath = self.viewModel.lastSelectedIndexPath, let updatedPerson = data.person{
+                    updatedPerson.isCollabsed = false
+                    self.viewModel.persons[lastSelectedIndexPath.row] = updatedPerson
+                    self.tableView.reloadRows(at: [lastSelectedIndexPath], with: .none)
+                }
+            }
+            
+        }).disposed(by: viewModel.disposeBag)
+    }
+    
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return viewModel.fetchIndexTitles()
     }
 }

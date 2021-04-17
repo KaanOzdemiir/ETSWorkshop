@@ -14,6 +14,7 @@ class HomeViewModel {
     var persons: [PersonData] = []
     var filteredPersons: [PersonData] = []
     var isSearching: Bool = false
+    var lastSelectedIndexPath: IndexPath?
     
     init() {
         persons = fetchPersons()
@@ -31,7 +32,8 @@ class HomeViewModel {
     }
     
     func getPersonBy(_ indexPath: IndexPath) -> PersonData {
-        return isSearching ? filteredPersons[indexPath.row] : persons[indexPath.row]
+        lastSelectedIndexPath = indexPath
+        return isSearching ? filteredPersons[indexPath.section] : persons[indexPath.section]
     }
     
     func getNumberOfRowInSection() -> Int {
@@ -40,6 +42,14 @@ class HomeViewModel {
     
     func fetchPersons() -> [PersonData] {
         let persons = [
+            PersonData(
+                name: "Kaan",
+                surname: "Özdemir",
+                birthdatTimeStamp: 1206506810,
+                email: "kaan@ozdemir.com",
+                phoneNumber: "+905541918779",
+                note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+            ),
             PersonData(
                 name: "Alper",
                 surname: "Büyük",
@@ -53,7 +63,7 @@ class HomeViewModel {
                 surname: "Tunç",
                 birthdatTimeStamp: 1506506810,
                 email: "etstur@etstur.com",
-                phoneNumber: "+905111111111",
+                phoneNumber: "+905222222222",
                 note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             ),
             PersonData(
@@ -61,10 +71,14 @@ class HomeViewModel {
                 surname: "Bolu",
                 birthdatTimeStamp: 1506506810,
                 email: "etstur@etstur.com",
-                phoneNumber: "+905111111111",
+                phoneNumber: "+905333333333",
                 note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             )
         ]
-        return persons
+        return persons.sorted(by: {$0.name ?? "" < $1.name ?? ""})
+    }
+    
+    func fetchIndexTitles() -> [String] {
+        return "#ABCDEFGHIJKLMNOPQRSTUVWXYZ".map({String($0)})
     }
 }

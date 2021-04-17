@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -100,16 +101,16 @@
                                                         <rect key="frame" x="0.0" y="85.5" width="331" height="346.5"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="30c-KL-uO7">
-                                                                <rect key="frame" x="0.0" y="0.0" width="331" height="58.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="331" height="42.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <color key="textColor" red="0.38823529410000002" green="0.38823529410000002" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1I6-Wy-RST">
-                                                                <rect key="frame" x="0.0" y="66.5" width="331" height="280"/>
+                                                                <rect key="frame" x="0.0" y="50.5" width="331" height="296"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WtV-ce-Y1u">
-                                                                        <rect key="frame" x="8" y="8" width="315" height="264"/>
+                                                                        <rect key="frame" x="16" y="16" width="299" height="264"/>
                                                                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam quis tellus vitae ante semper tempor ut sed lorem. Pellentesque condimentum enim mollis lacus pellentesque, nec malesuada nisi elementum. Suspendisse lobortis orci at lacus dictum ultricies. Donec ante purus, maximus et sapien ut, molestie feugiat mi. Sed justo metus, condimentum sed massa vitae, commodo convallis metus. Curabitur a augue vitae velit posuere suscipit.</string>
                                                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                                         <color key="textColor" red="0.38823529411764707" green="0.38823529411764707" blue="0.38823529411764707" alpha="1" colorSpace="calibratedRGB"/>
@@ -118,10 +119,10 @@
                                                                 </subviews>
                                                                 <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="trailing" secondItem="WtV-ce-Y1u" secondAttribute="trailing" constant="8" id="XWA-9u-kIF"/>
-                                                                    <constraint firstItem="WtV-ce-Y1u" firstAttribute="leading" secondItem="1I6-Wy-RST" secondAttribute="leading" constant="8" id="Ywa-3j-Oov"/>
-                                                                    <constraint firstItem="WtV-ce-Y1u" firstAttribute="top" secondItem="1I6-Wy-RST" secondAttribute="top" constant="8" id="c39-LK-Lo6"/>
-                                                                    <constraint firstAttribute="bottom" secondItem="WtV-ce-Y1u" secondAttribute="bottom" constant="8" id="kWu-Zt-pt1"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="WtV-ce-Y1u" secondAttribute="trailing" constant="16" id="XWA-9u-kIF"/>
+                                                                    <constraint firstItem="WtV-ce-Y1u" firstAttribute="leading" secondItem="1I6-Wy-RST" secondAttribute="leading" constant="16" id="Ywa-3j-Oov"/>
+                                                                    <constraint firstItem="WtV-ce-Y1u" firstAttribute="top" secondItem="1I6-Wy-RST" secondAttribute="top" constant="16" id="c39-LK-Lo6"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="WtV-ce-Y1u" secondAttribute="bottom" constant="16" id="kWu-Zt-pt1"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -166,7 +167,7 @@
             <connections>
                 <outlet property="birthdayLabel" destination="GmD-yP-Vkd" id="c17-MX-abe"/>
                 <outlet property="birthdayTitleLabel" destination="av6-16-obG" id="1FH-LN-bVI"/>
-                <outlet property="detailContainerStackView" destination="PfU-Vz-nd2" id="vZO-rB-EMA"/>
+                <outlet property="detailContainerStackView" destination="IvJ-m7-euy" id="DEt-32-EAI"/>
                 <outlet property="emailLabel" destination="qJO-NC-iSi" id="2tb-qa-A3f"/>
                 <outlet property="emailTitleLabel" destination="6U9-bx-tij" id="lKJ-OW-kKB"/>
                 <outlet property="nameLabel" destination="rxV-Xb-26I" id="eeo-2w-osU"/>

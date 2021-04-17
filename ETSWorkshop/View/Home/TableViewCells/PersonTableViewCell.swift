@@ -44,11 +44,12 @@ class PersonTableViewCell: UITableViewCell {
         detailContainerStackView.isHidden = person.isCollabsed
         
         nameLabel.text = [person.name ?? "", person.surname ?? ""].joined(separator: " ")
+        birthdayLabel.text = person.birthdatTimeStamp?.convertToDateString()
+        emailLabel.text = person.email
+        phoneNumberLabel.text = person.phoneNumber
         
         if !person.isCollabsed{
-            birthdayLabel.text = "\(person.birthdatTimeStamp!)"
-            emailLabel.text = person.email
-            phoneNumberLabel.text = person.phoneNumber
+            noteLabel.text = person.note
         }
     }
 }

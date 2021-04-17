@@ -17,6 +17,12 @@
 		F7991AF9262A3210003CE562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AF8262A3210003CE562 /* HomeViewModel.swift */; };
 		F7991AFF262A3629003CE562 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */; };
 		F7991B00262A3629003CE562 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7991AFE262A3629003CE562 /* PersonTableViewCell.xib */; };
+		F7991B0D262AF871003CE562 /* PersonDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B0C262AF871003CE562 /* PersonDetailVC.swift */; };
+		F7991B1E262B013C003CE562 /* ETSGradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B1D262B013C003CE562 /* ETSGradientButton.swift */; };
+		F7991B3B262B0CEF003CE562 /* PersonDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B3A262B0CEF003CE562 /* PersonDetailViewModel.swift */; };
+		F7991B3F262B10A2003CE562 /* Date+Extensitons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B3E262B10A2003CE562 /* Date+Extensitons.swift */; };
+		F7991B44262B2665003CE562 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B43262B2665003CE562 /* String+Extensions.swift */; };
+		F7991B47262B2825003CE562 /* RegexPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991B46262B2825003CE562 /* RegexPattern.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +39,12 @@
 		F7991AF8262A3210003CE562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		F7991AFE262A3629003CE562 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		F7991B0C262AF871003CE562 /* PersonDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailVC.swift; sourceTree = "<group>"; };
+		F7991B1D262B013C003CE562 /* ETSGradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSGradientButton.swift; sourceTree = "<group>"; };
+		F7991B3A262B0CEF003CE562 /* PersonDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailViewModel.swift; sourceTree = "<group>"; };
+		F7991B3E262B10A2003CE562 /* Date+Extensitons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensitons.swift"; sourceTree = "<group>"; };
+		F7991B43262B2665003CE562 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		F7991B46262B2825003CE562 /* RegexPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegexPattern.swift; sourceTree = "<group>"; };
 		FDB8DDA2219227834AC1B511 /* Pods_ETSWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -86,6 +98,7 @@
 		F70A03D6262A0DFF0016250F /* ETSWorkshop */ = {
 			isa = PBXGroup;
 			children = (
+				F7991B3D262B1090003CE562 /* Helpers */,
 				F70A03EF262A0F790016250F /* ViewModel */,
 				F70A03EE262A0F740016250F /* View */,
 				F70A03ED262A0F700016250F /* Model */,
@@ -106,8 +119,9 @@
 		F70A03EE262A0F740016250F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F7991AFC262A3619003CE562 /* TableViewCells */,
-				F70A03DB262A0DFF0016250F /* HomeViewController.swift */,
+				F7991B0A262AF859003CE562 /* Home */,
+				F7991B08262AF850003CE562 /* Detail */,
+				F7991B41262B1168003CE562 /* Custom Views */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -138,6 +152,42 @@
 				F7991AFE262A3629003CE562 /* PersonTableViewCell.xib */,
 			);
 			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		F7991B08262AF850003CE562 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B0C262AF871003CE562 /* PersonDetailVC.swift */,
+				F7991B3A262B0CEF003CE562 /* PersonDetailViewModel.swift */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		F7991B0A262AF859003CE562 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F7991AFC262A3619003CE562 /* TableViewCells */,
+				F70A03DB262A0DFF0016250F /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		F7991B3D262B1090003CE562 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B3E262B10A2003CE562 /* Date+Extensitons.swift */,
+				F7991B43262B2665003CE562 /* String+Extensions.swift */,
+				F7991B46262B2825003CE562 /* RegexPattern.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F7991B41262B1168003CE562 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B1D262B013C003CE562 /* ETSGradientButton.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,11 +305,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7991B44262B2665003CE562 /* String+Extensions.swift in Sources */,
+				F7991B3F262B10A2003CE562 /* Date+Extensitons.swift in Sources */,
 				F7991AF6262A3194003CE562 /* PersonData.swift in Sources */,
 				F70A03DC262A0DFF0016250F /* HomeViewController.swift in Sources */,
+				F7991B1E262B013C003CE562 /* ETSGradientButton.swift in Sources */,
+				F7991B0D262AF871003CE562 /* PersonDetailVC.swift in Sources */,
+				F7991B3B262B0CEF003CE562 /* PersonDetailViewModel.swift in Sources */,
 				F70A03D8262A0DFF0016250F /* AppDelegate.swift in Sources */,
 				F7991AFF262A3629003CE562 /* PersonTableViewCell.swift in Sources */,
 				F7991AF9262A3210003CE562 /* HomeViewModel.swift in Sources */,
+				F7991B47262B2825003CE562 /* RegexPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +466,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZB49XM27T;
 				INFOPLIST_FILE = "ETSWorkshop/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +487,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZB49XM27T;
 				INFOPLIST_FILE = "ETSWorkshop/Supporting Files/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

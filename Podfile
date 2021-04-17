@@ -8,4 +8,6 @@ target 'ETSWorkshop' do
   # Pods for ETSWorkshop
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'PhoneNumberKit', '~> 3.3'
+pod 'IQKeyboardManagerSwift'
 end

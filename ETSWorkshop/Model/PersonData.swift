@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PersonData {
+class PersonData {
     var name: String?
     var surname: String?
     var birthdatTimeStamp: TimeInterval?
@@ -15,4 +15,20 @@ struct PersonData {
     var phoneNumber: String?
     var note: String?
     var isCollabsed: Bool = true
+    
+    init(
+        name: String?,
+        surname: String?,
+        birthdatTimeStamp: TimeInterval?,
+        email: String?,
+        phoneNumber: String?,
+        note: String?
+    ) {
+        self.name = name
+        self.surname = surname
+        self.birthdatTimeStamp = birthdatTimeStamp
+        self.email = email
+        self.phoneNumber = phoneNumber
+        self.note = note
+    }
 }
