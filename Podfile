@@ -7,4 +7,5 @@ target 'ETSWorkshop' do
 
   # Pods for ETSWorkshop
 pod 'RxSwift'
+pod 'RxCocoa'
 end

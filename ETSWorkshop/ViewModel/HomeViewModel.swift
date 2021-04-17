@@ -6,10 +6,14 @@
 //
 
 import Foundation
+import RxSwift
 
 class HomeViewModel {
     
+    let disposeBag = DisposeBag()
     var persons: [PersonData] = []
+    var filteredPersons: [PersonData] = []
+    var isSearching: Bool = false
     
     init() {
         persons = fetchPersons()
@@ -17,6 +21,21 @@ class HomeViewModel {
     
     func toggleCell(index: Int) {
         persons[index].isCollabsed = !persons[index].isCollabsed
+    }
+    
+    func filterBy(_ keyword: String) {
+        filteredPersons = persons.filter({
+            ($0.name?.contains(keyword) ?? false) || ($0.surname?.lowercased().contains(keyword) ?? false) || ($0.email?.lowercased().contains(keyword) ?? false) || ($0.phoneNumber?.lowercased().contains(keyword) ?? false)
+        })
+        
+    }
+    
+    func getPersonBy(_ indexPath: IndexPath) -> PersonData {
+        return isSearching ? filteredPersons[indexPath.row] : persons[indexPath.row]
+    }
+    
+    func getNumberOfRowInSection() -> Int {
+        return isSearching ? filteredPersons.count : persons.count
     }
     
     func fetchPersons() -> [PersonData] {
