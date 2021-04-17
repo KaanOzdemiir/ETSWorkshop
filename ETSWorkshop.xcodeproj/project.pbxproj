@@ -3,27 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581C91D08EEC8E52109F9653 /* Pods_ETSWorkshop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB8DDA2219227834AC1B511 /* Pods_ETSWorkshop.framework */; };
 		F70A03D8262A0DFF0016250F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A03D7262A0DFF0016250F /* AppDelegate.swift */; };
-		F70A03DA262A0DFF0016250F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A03D9262A0DFF0016250F /* SceneDelegate.swift */; };
-		F70A03DC262A0DFF0016250F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A03DB262A0DFF0016250F /* ViewController.swift */; };
+		F70A03DC262A0DFF0016250F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70A03DB262A0DFF0016250F /* HomeViewController.swift */; };
 		F70A03DF262A0DFF0016250F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70A03DD262A0DFF0016250F /* Main.storyboard */; };
 		F70A03E1262A0E000016250F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70A03E0262A0E000016250F /* Assets.xcassets */; };
 		F70A03E4262A0E000016250F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70A03E2262A0E000016250F /* LaunchScreen.storyboard */; };
+		F7991AF6262A3194003CE562 /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AF5262A3194003CE562 /* PersonData.swift */; };
+		F7991AF9262A3210003CE562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AF8262A3210003CE562 /* HomeViewModel.swift */; };
+		F7991AFF262A3629003CE562 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */; };
+		F7991B00262A3629003CE562 /* PersonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7991AFE262A3629003CE562 /* PersonTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7754AEDE999D356EBB8FE026 /* Pods-ETSWorkshop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSWorkshop.debug.xcconfig"; path = "Target Support Files/Pods-ETSWorkshop/Pods-ETSWorkshop.debug.xcconfig"; sourceTree = "<group>"; };
+		7D8380383D03085775FCBAA2 /* Pods-ETSWorkshop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ETSWorkshop.release.xcconfig"; path = "Target Support Files/Pods-ETSWorkshop/Pods-ETSWorkshop.release.xcconfig"; sourceTree = "<group>"; };
 		F70A03D4262A0DFF0016250F /* ETSWorkshop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ETSWorkshop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F70A03D7262A0DFF0016250F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F70A03D9262A0DFF0016250F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F70A03DB262A0DFF0016250F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F70A03DB262A0DFF0016250F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F70A03DE262A0DFF0016250F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F70A03E0262A0E000016250F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F70A03E3262A0E000016250F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F70A03E5262A0E000016250F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7991AF5262A3194003CE562 /* PersonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
+		F7991AF8262A3210003CE562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		F7991AFE262A3629003CE562 /* PersonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonTableViewCell.xib; sourceTree = "<group>"; };
+		FDB8DDA2219227834AC1B511 /* Pods_ETSWorkshop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ETSWorkshop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				581C91D08EEC8E52109F9653 /* Pods_ETSWorkshop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		505635670ECDD1DA976F51B3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7754AEDE999D356EBB8FE026 /* Pods-ETSWorkshop.debug.xcconfig */,
+				7D8380383D03085775FCBAA2 /* Pods-ETSWorkshop.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		63325E80B3514C6D9BA00080 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDB8DDA2219227834AC1B511 /* Pods_ETSWorkshop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F70A03CB262A0DFF0016250F = {
 			isa = PBXGroup;
 			children = (
 				F70A03D6262A0DFF0016250F /* ETSWorkshop */,
 				F70A03D5262A0DFF0016250F /* Products */,
+				505635670ECDD1DA976F51B3 /* Pods */,
+				63325E80B3514C6D9BA00080 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +86,58 @@
 		F70A03D6262A0DFF0016250F /* ETSWorkshop */ = {
 			isa = PBXGroup;
 			children = (
-				F70A03D7262A0DFF0016250F /* AppDelegate.swift */,
-				F70A03D9262A0DFF0016250F /* SceneDelegate.swift */,
-				F70A03DB262A0DFF0016250F /* ViewController.swift */,
+				F70A03EF262A0F790016250F /* ViewModel */,
+				F70A03EE262A0F740016250F /* View */,
+				F70A03ED262A0F700016250F /* Model */,
+				F70A03F0262A0F890016250F /* Supporting Files */,
 				F70A03DD262A0DFF0016250F /* Main.storyboard */,
+			);
+			path = ETSWorkshop;
+			sourceTree = "<group>";
+		};
+		F70A03ED262A0F700016250F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F7991AF5262A3194003CE562 /* PersonData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F70A03EE262A0F740016250F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7991AFC262A3619003CE562 /* TableViewCells */,
+				F70A03DB262A0DFF0016250F /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F70A03EF262A0F790016250F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F7991AF8262A3210003CE562 /* HomeViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F70A03F0262A0F890016250F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F70A03D7262A0DFF0016250F /* AppDelegate.swift */,
 				F70A03E0262A0E000016250F /* Assets.xcassets */,
 				F70A03E2262A0E000016250F /* LaunchScreen.storyboard */,
 				F70A03E5262A0E000016250F /* Info.plist */,
 			);
-			path = ETSWorkshop;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7991AFC262A3619003CE562 /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */,
+				F7991AFE262A3629003CE562 /* PersonTableViewCell.xib */,
+			);
+			path = TableViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F70A03E8262A0E000016250F /* Build configuration list for PBXNativeTarget "ETSWorkshop" */;
 			buildPhases = (
+				DF7988CE336BEE50BE577D7C /* [CP] Check Pods Manifest.lock */,
 				F70A03D0262A0DFF0016250F /* Sources */,
 				F70A03D1262A0DFF0016250F /* Frameworks */,
 				F70A03D2262A0DFF0016250F /* Resources */,
+				0F1685FB403410FB20B9C430 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,20 +201,65 @@
 			files = (
 				F70A03E4262A0E000016250F /* LaunchScreen.storyboard in Resources */,
 				F70A03E1262A0E000016250F /* Assets.xcassets in Resources */,
+				F7991B00262A3629003CE562 /* PersonTableViewCell.xib in Resources */,
 				F70A03DF262A0DFF0016250F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F1685FB403410FB20B9C430 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ETSWorkshop/Pods-ETSWorkshop-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ETSWorkshop/Pods-ETSWorkshop-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ETSWorkshop/Pods-ETSWorkshop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF7988CE336BEE50BE577D7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ETSWorkshop-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F70A03D0262A0DFF0016250F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F70A03DC262A0DFF0016250F /* ViewController.swift in Sources */,
+				F7991AF6262A3194003CE562 /* PersonData.swift in Sources */,
+				F70A03DC262A0DFF0016250F /* HomeViewController.swift in Sources */,
 				F70A03D8262A0DFF0016250F /* AppDelegate.swift in Sources */,
-				F70A03DA262A0DFF0016250F /* SceneDelegate.swift in Sources */,
+				F7991AFF262A3629003CE562 /* PersonTableViewCell.swift in Sources */,
+				F7991AF9262A3210003CE562 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,12 +403,13 @@
 		};
 		F70A03E9262A0E000016250F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7754AEDE999D356EBB8FE026 /* Pods-ETSWorkshop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZB49XM27T;
-				INFOPLIST_FILE = ETSWorkshop/Info.plist;
+				INFOPLIST_FILE = "ETSWorkshop/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,12 +423,13 @@
 		};
 		F70A03EA262A0E000016250F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D8380383D03085775FCBAA2 /* Pods-ETSWorkshop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8ZB49XM27T;
-				INFOPLIST_FILE = ETSWorkshop/Info.plist;
+				INFOPLIST_FILE = "ETSWorkshop/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
