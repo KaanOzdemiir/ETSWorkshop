@@ -15,6 +15,8 @@
 		F70A03E4262A0E000016250F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70A03E2262A0E000016250F /* LaunchScreen.storyboard */; };
 		F7595300262C8B7C00AF9A0A /* ETSPhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75952FF262C8B7C00AF9A0A /* ETSPhoneTextField.swift */; };
 		F7595309262CB6F300AF9A0A /* PhoneNumberFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7595308262CB6F300AF9A0A /* PhoneNumberFormat.swift */; };
+		F767974B262CD3170017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.48.png in Resources */ = {isa = PBXBuildFile; fileRef = F7679749262CD3160017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.48.png */; };
+		F767974C262CD3170017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.58.png in Resources */ = {isa = PBXBuildFile; fileRef = F767974A262CD3160017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.58.png */; };
 		F7991AF6262A3194003CE562 /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AF5262A3194003CE562 /* PersonData.swift */; };
 		F7991AF9262A3210003CE562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AF8262A3210003CE562 /* HomeViewModel.swift */; };
 		F7991AFF262A3629003CE562 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */; };
@@ -52,6 +54,8 @@
 		F70A03E5262A0E000016250F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F75952FF262C8B7C00AF9A0A /* ETSPhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSPhoneTextField.swift; sourceTree = "<group>"; };
 		F7595308262CB6F300AF9A0A /* PhoneNumberFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormat.swift; sourceTree = "<group>"; };
+		F7679749262CD3160017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.48.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.48.png"; sourceTree = "<group>"; };
+		F767974A262CD3160017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.58.png"; sourceTree = "<group>"; };
 		F7991AF5262A3194003CE562 /* PersonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
 		F7991AF8262A3210003CE562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -195,6 +199,15 @@
 			path = Util;
 			sourceTree = "<group>";
 		};
+		F7679748262CD3090017F93E /* SS */ = {
+			isa = PBXGroup;
+			children = (
+				F7679749262CD3160017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.48.png */,
+				F767974A262CD3160017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.58.png */,
+			);
+			path = SS;
+			sourceTree = "<group>";
+		};
 		F7991AFC262A3619003CE562 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -247,6 +260,7 @@
 		F7991B60262B6404003CE562 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				F7679748262CD3090017F93E /* SS */,
 				F7991B61262B6409003CE562 /* Font */,
 			);
 			path = Resource;
@@ -410,10 +424,12 @@
 				F7991D0F262B70DB003CE562 /* ETSLabelPhoneTextFieldView.xib in Resources */,
 				F70A03E1262A0E000016250F /* Assets.xcassets in Resources */,
 				F7991CFA262B6DBC003CE562 /* ETSLabelTextFieldView.xib in Resources */,
+				F767974B262CD3170017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.48.png in Resources */,
 				F7991B00262A3629003CE562 /* PersonTableViewCell.xib in Resources */,
 				F7991D07262B6FCC003CE562 /* ETSLabelDatePickerView.xib in Resources */,
 				F7991B67262B641F003CE562 /* Rubik-Medium.ttf in Resources */,
 				F7991B68262B641F003CE562 /* Rubik-Bold.ttf in Resources */,
+				F767974C262CD3170017F93E /* Simulator Screen Shot - iPhone 12 Pro Max - 2021-04-18 at 23.48.58.png in Resources */,
 				F7991B66262B641F003CE562 /* Rubik-Regular.ttf in Resources */,
 				F70A03DF262A0DFF0016250F /* Main.storyboard in Resources */,
 				F7991B69262B641F003CE562 /* Rubik-SemiBold.ttf in Resources */,
