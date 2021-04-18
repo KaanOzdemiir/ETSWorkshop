@@ -32,12 +32,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kişiler" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWC-w5-8db">
-                                <rect key="frame" x="149.5" y="50" width="115" height="36"/>
-                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="36"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5TX-a2-iuh">
                                 <rect key="frame" x="0.0" y="200" width="414" height="696"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -58,6 +52,12 @@
                                     <action selector="addButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JSn-wo-kBB"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kişiler" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="30" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWC-w5-8db">
+                                <rect key="frame" x="150" y="50" width="115" height="36"/>
+                                <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="36"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.94117647058823528" green="0.94901960784313721" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
@@ -130,7 +130,7 @@
                                 <rect key="frame" x="0.0" y="136" width="414" height="754"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-Es-PYg">
-                                        <rect key="frame" x="16" y="16" width="382" height="686"/>
+                                        <rect key="frame" x="16" y="16" width="382" height="722"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Bj-Rr-YP2" customClass="ETSLabelTextFieldView" customModule="ETSWorkshop" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="382" height="80"/>
@@ -172,19 +172,33 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="warningText" value="Telefon Numarası Yanlış"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" ambiguous="YES" text="Not" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WKA-Ym-fGM">
-                                                <rect key="frame" x="0.0" y="420" width="382" height="200"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="200" id="NGJ-GC-Q0w"/>
-                                                </constraints>
-                                                <inset key="scrollIndicatorInsets" minX="8" minY="8" maxX="8" maxY="8"/>
-                                                <color key="textColor" red="0.38823529410000002" green="0.38823529410000002" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ROT-bB-USE">
+                                                <rect key="frame" x="0.0" y="420" width="382" height="236"/>
+                                                <subviews>
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="255" verticalCompressionResistancePriority="755" text="Not" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="WKA-Ym-fGM">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="200"/>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="200" id="NGJ-GC-Q0w"/>
+                                                        </constraints>
+                                                        <inset key="scrollIndicatorInsets" minX="8" minY="8" maxX="8" maxY="8"/>
+                                                        <color key="textColor" red="0.38823529410000002" green="0.38823529410000002" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    </textView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Maksimum 100 karakter olabilir" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wp-kJ-96h">
+                                                        <rect key="frame" x="0.0" y="216" width="382" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="JIJ-EP-FSi"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                        <color key="textColor" red="0.81568627449999997" green="0.0078431372550000003" blue="0.1058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3n-Di-wOG" customClass="ETSGradientButton" customModule="ETSWorkshop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="636" width="382" height="50"/>
+                                                <rect key="frame" x="0.0" y="672" width="382" height="50"/>
                                                 <color key="backgroundColor" red="0.56078431370000004" green="0.4039215686" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="DLH-5Z-1sK"/>
@@ -257,6 +271,7 @@
                         <outlet property="emailView" destination="Sh9-bI-xGe" id="d0K-I6-0k5"/>
                         <outlet property="messageView" destination="wgt-Y6-DbY" id="nIR-oK-HsE"/>
                         <outlet property="nameView" destination="6Bj-Rr-YP2" id="4zN-R4-0lD"/>
+                        <outlet property="noteMessageLabel" destination="9Wp-kJ-96h" id="0AB-AB-3nK"/>
                         <outlet property="noteTextView" destination="WKA-Ym-fGM" id="gBK-VZ-Toi"/>
                         <outlet property="phoneView" destination="lTa-j4-oiT" id="cyV-3B-tvV"/>
                         <outlet property="saveUpdateButton" destination="x3n-Di-wOG" id="rx4-ph-emV"/>

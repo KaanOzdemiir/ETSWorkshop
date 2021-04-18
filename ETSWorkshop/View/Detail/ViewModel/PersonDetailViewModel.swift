@@ -7,7 +7,6 @@
 
 import Foundation
 import RxSwift
-import PhoneNumberKit
 
 // MARK: Screen modes
 enum ScreenMode {
@@ -20,7 +19,6 @@ class PersonDetailViewModel {
     var person: PersonData?
     var mode: ScreenMode = .new
     let rxPersonUpdated = PublishSubject<(person: PersonData?, mode: ScreenMode)>()
-    let phoneNumberKit = PhoneNumberKit()
     var messageVC: MessageVC?
     
 
@@ -39,17 +37,6 @@ class PersonDetailViewModel {
         }
         rxPersonUpdated.onNext((person: person, mode: mode))
         complationHandler(true)
-    }
-    
-    func getPhoneNumber(_ number: String) -> String? {
-        do {
-            let phoneNumber = try phoneNumberKit.parse(number)
-            return phoneNumberKit.format(phoneNumber, toType: .e164)
-        }
-        catch {
-            print("Generic parser error")
-        }
-        return nil
     }
     
     func show(mode: MessageMode, duration: Double = 1.2, complationHandler: @escaping(() -> Void)) {

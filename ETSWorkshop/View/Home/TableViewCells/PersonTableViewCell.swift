@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PhoneNumberKit
 
 class PersonTableViewCell: UITableViewCell {
 
@@ -24,9 +23,7 @@ class PersonTableViewCell: UITableViewCell {
     @IBOutlet weak var noteTitleLabel: UILabel!
     @IBOutlet weak var noteContainerView: UIView!
     @IBOutlet weak var noteLabel: UILabel!
-    
-    let phoneNumberKit = PhoneNumberKit()
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -65,22 +62,12 @@ class PersonTableViewCell: UITableViewCell {
         set(person.phoneNumber)
         
         
-        if !person.isCollabsed{
+        if !person.isCollabsed{ // FIX ME: note değerinin boş olma durumuna göre işlem yapılabilir
             noteLabel.text = person.note
         }
     }
     
     func set(_ phoneNumber: String?)  {
-        DispatchQueue.main.async {
-            do {
-                let phoneNumber = try self.phoneNumberKit.parse(phoneNumber ?? "")
-                self.phoneNumberLabel.text = self.phoneNumberKit.format(phoneNumber, toType: .international)
-            }
-            catch {
-                print("Generic parser error")
-                self.phoneNumberLabel.text = nil
-            }
-        }
-        
+        phoneNumberLabel.text = phoneNumber?.applyPatternOnNumbers()
     }
 }

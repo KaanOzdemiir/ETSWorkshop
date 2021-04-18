@@ -48,7 +48,7 @@ class HomeViewModel {
                 surname: "Özdemir",
                 birthdatTimeStamp: 1206506810,
                 email: "kaan@ozdemir.com",
-                phoneNumber: "+905541918779",
+                phoneNumber: "+18143519385",
                 note: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
             ),
             PersonData(
@@ -85,11 +85,13 @@ class HomeViewModel {
     }
     
     func update(_ person: PersonData, indexPath: IndexPath) {
-        if isSearching{
-            filteredPersons[indexPath.section] = person
-        }else{
-            persons[indexPath.section] = person
-        }
+        let unUpdatedPerson = isSearching ? filteredPersons[indexPath.section] : persons[indexPath.section]
+        unUpdatedPerson.name = person.name
+        unUpdatedPerson.surname = person.surname
+        unUpdatedPerson.email = person.email
+        unUpdatedPerson.birthdatTimeStamp = person.birthdatTimeStamp
+        unUpdatedPerson.phoneNumber = person.phoneNumber
+        unUpdatedPerson.note = person.note
     }
     
     func fetchIndexTitles() -> [String] {

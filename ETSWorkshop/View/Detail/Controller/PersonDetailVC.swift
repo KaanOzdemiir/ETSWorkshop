@@ -7,7 +7,6 @@
 
 import Foundation
 import UIKit
-import PhoneNumberKit
 import IQKeyboardManagerSwift
 
 class PersonDetailVC: UIViewController {
@@ -19,9 +18,22 @@ class PersonDetailVC: UIViewController {
     @IBOutlet weak var nameView: ETSLabelTextFieldView!
     @IBOutlet weak var surnameView: ETSLabelTextFieldView!
     @IBOutlet weak var birthdateView: ETSLabelDatePickerView!
-    @IBOutlet weak var emailView: ETSLabelTextFieldView!
+    @IBOutlet weak var emailView: ETSLabelTextFieldView!{
+        didSet{
+            emailView.textFieldKeyboardType = .emailAddress
+        }
+    }
     @IBOutlet weak var phoneView: ETSLabelPhoneTextFieldView!
-    @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var noteTextView: UITextView!{
+        didSet{
+            noteTextView.delegate = self
+        }
+    }
+    @IBOutlet weak var noteMessageLabel: UILabel!{
+        didSet{
+            noteMessageLabel.isHidden = true
+        }
+    }
     @IBOutlet weak var saveUpdateButton: ETSGradientButton!
     
     override var prefersStatusBarHidden: Bool{
@@ -31,7 +43,13 @@ class PersonDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setFont()
+        addBorderTo(noteTextView)
         setPersonData()
+    }
+    
+    func addBorderTo(_ view: UIView) {
+        view.layer.borderWidth = 1
+        view.layer.borderColor = UIColor.clear.cgColor
     }
     
     func setFont() {
@@ -45,7 +63,7 @@ class PersonDetailVC: UIViewController {
             surnameView.textField.text = viewModel.person?.surname
             birthdateView.textField.text = viewModel.person?.birthdatTimeStamp?.convertToDateString()
             emailView.textField.text = viewModel.person?.email
-            phoneView.textField.text = viewModel.person?.phoneNumber
+            phoneView.textField.phoneNumber = viewModel.person?.phoneNumber
             noteTextView.text = viewModel.person?.note
         }
     }
@@ -96,20 +114,20 @@ extension PersonDetailVC{
             return
         }
         
-        guard let phoneNumber = phoneView.textField.text, let prefix = ((phoneView.textField.leftView as? UIStackView)?.arrangedSubviews.first(where: {$0.tag == 999}) as? UILabel)?.text, !phoneNumber.isEmpty else {
+        guard let phoneNumber = phoneView.textField.getPhoneWithFormatE164(), !phoneNumber.isEmpty else {
             print("Warning: Phone number is empty!")
             phoneView.showWarning()
             return
         }
         
+        let note = noteTextView.text ?? ""
         
-        guard let validPhoneNumber = viewModel.getPhoneNumber("\(prefix)\(phoneNumber)"), !validPhoneNumber.isEmpty else{
-            print("Ivalid Phone number.")
-            phoneView.showWarning()
+        if !note.isValid(pattern: RegexPattern.notePattern){
+            print("Note can be max 100 chars.")
+            noteTextView.layer.borderColor = #colorLiteral(red: 0.8156862745, green: 0.007843137255, blue: 0.1058823529, alpha: 1).cgColor
+            noteMessageLabel.isHidden = false
             return
         }
-        
-        let note = noteTextView.text ?? ""
         
         
         let updatedPerson = PersonData(
@@ -118,7 +136,7 @@ extension PersonDetailVC{
             surname: surname,
             birthdatTimeStamp: birthdate.toTimeInterval(),
             email: email,
-            phoneNumber: validPhoneNumber,
+            phoneNumber: phoneNumber,
             note: note
         )
         
@@ -142,5 +160,12 @@ extension PersonDetailVC{
         default:
             break
         }
+    }
+}
+
+extension PersonDetailVC: UITextViewDelegate{
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        noteTextView.layer.borderColor = UIColor.clear.cgColor
+        noteMessageLabel.isHidden = true
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Kaan Ozdemir on 17.04.2021.
 //
 import UIKit
-import PhoneNumberKit
+//import PhoneNumberKit
 
 class ETSLabelPhoneTextFieldView: UIView {
 
@@ -13,11 +13,8 @@ class ETSLabelPhoneTextFieldView: UIView {
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var textField: PhoneNumberTextField!{
+    @IBOutlet weak var textField: ETSPhoneTextField!{
         didSet{
-            textField.defaultRegion = "TR"
-            textField.withPrefix = false
-            textField.withFlag = true
             textField.delegate = self
         }
     }
@@ -52,6 +49,16 @@ class ETSLabelPhoneTextFieldView: UIView {
         super.init(frame: frame)
         setBorders()
         setFont()
+        addTapGesture()
+    }
+    
+    func addTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
+        self.addGestureRecognizer(gesture)
+    }
+    
+    @objc func viewTapped(_ gesture: UITapGestureRecognizer) {
+        textField.becomeFirstResponder()
     }
     
     func showWarning() {
@@ -74,6 +81,7 @@ class ETSLabelPhoneTextFieldView: UIView {
         super.init(coder: coder)
         initSubviews()
         setBorders()
+        addTapGesture()
     }
     
     func initSubviews() {
@@ -88,8 +96,32 @@ class ETSLabelPhoneTextFieldView: UIView {
 extension ETSLabelPhoneTextFieldView: UITextFieldDelegate{
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let text = textField.text ?? ""
-        if text.count > 12 && !string.isEmpty{
+
+        switch self.textField.prefix {
+        case "+1":
+            if string.isEmpty{
+                self.textField.phoneNumber = "+1\(text)".applyPatternOnNumbers()
+                return true
+            }
+            if "\(text)\(string)".count > 20{
+                return false
+            }
+            
+            self.textField.phoneNumber = "+1\(text)\(string)".applyPatternOnNumbers()
             return false
+        case "+90":
+            if string.isEmpty{
+                self.textField.phoneNumber = "+90\(text)".applyPatternOnNumbers()
+                return true
+            }
+            if "\(text)\(string)".count > 13{
+                return false
+            }
+            
+            self.textField.phoneNumber = "+90\(text)\(string)".applyPatternOnNumbers()
+            return false
+        default:
+            break
         }
         return true
     }

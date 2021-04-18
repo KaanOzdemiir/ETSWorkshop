@@ -39,7 +39,6 @@ class ETSLabelTextFieldView: UIView {
         }
     }
     
-    @IBInspectable
     var textFieldKeyboardType: UIKeyboardType = .asciiCapable{
         didSet{
             textField.keyboardType = textFieldKeyboardType
@@ -51,6 +50,16 @@ class ETSLabelTextFieldView: UIView {
         super.init(frame: frame)
         setBorders()
         setFont()
+        addTapGesture()
+    }
+    
+    func addTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
+        self.addGestureRecognizer(gesture)
+    }
+    
+    @objc func viewTapped(_ gesture: UITapGestureRecognizer) {
+        textField.becomeFirstResponder()
     }
     
     func showWarning() {
@@ -73,6 +82,7 @@ class ETSLabelTextFieldView: UIView {
         super.init(coder: coder)
         initSubviews()
         setBorders()
+        addTapGesture()
     }
     
     func initSubviews() {

@@ -27,14 +27,13 @@ class ETSLabelDatePickerView: UIView {
     
     lazy var datePickerView: UIDatePicker = {
         let p = UIDatePicker()
+        p.maximumDate = Date()
         p.datePickerMode = .date
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        
-        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: nil, action: #selector(doneButtonClicked))
-        toolbar.setItems([doneButton], animated: true)
-        
-        textField?.inputAccessoryView = toolbar
+        p.locale = Locale(identifier: "tr")
+        if #available(iOS 13.4, *) {
+            p.preferredDatePickerStyle = .wheels
+        }
+        textField?.inputAccessoryView = prepareToolbar()
         return p
     }()
     
@@ -63,6 +62,16 @@ class ETSLabelDatePickerView: UIView {
         super.init(frame: frame)
         setBorders()
         setFont()
+        addTapGesture()
+    }
+    
+    func addTapGesture() {
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped(_:)))
+        self.addGestureRecognizer(gesture)
+    }
+    
+    @objc func viewTapped(_ gesture: UITapGestureRecognizer) {
+        textField.becomeFirstResponder()
     }
     
     func showWarning() {
@@ -85,6 +94,7 @@ class ETSLabelDatePickerView: UIView {
         super.init(coder: coder)
         initSubviews()
         setBorders()
+        addTapGesture()
     }
     
     func initSubviews() {
@@ -94,6 +104,14 @@ class ETSLabelDatePickerView: UIView {
         addSubview(contentView)
     }
 
+    func prepareToolbar() -> UIToolbar {
+        let toolbar = UIToolbar()
+        let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let doneButton = UIBarButtonItem(title: "Tamam", style: .plain, target: self, action: #selector(doneButtonClicked))
+        toolbar.setItems([flexButton, doneButton], animated: true)
+        toolbar.sizeToFit()
+        return toolbar
+    }
 }
 
 extension ETSLabelDatePickerView{

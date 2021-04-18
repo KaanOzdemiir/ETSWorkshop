@@ -13,6 +13,8 @@
 		F70A03DF262A0DFF0016250F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70A03DD262A0DFF0016250F /* Main.storyboard */; };
 		F70A03E1262A0E000016250F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F70A03E0262A0E000016250F /* Assets.xcassets */; };
 		F70A03E4262A0E000016250F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70A03E2262A0E000016250F /* LaunchScreen.storyboard */; };
+		F7595300262C8B7C00AF9A0A /* ETSPhoneTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75952FF262C8B7C00AF9A0A /* ETSPhoneTextField.swift */; };
+		F7595309262CB6F300AF9A0A /* PhoneNumberFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7595308262CB6F300AF9A0A /* PhoneNumberFormat.swift */; };
 		F7991AF6262A3194003CE562 /* PersonData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AF5262A3194003CE562 /* PersonData.swift */; };
 		F7991AF9262A3210003CE562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AF8262A3210003CE562 /* HomeViewModel.swift */; };
 		F7991AFF262A3629003CE562 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */; };
@@ -48,6 +50,8 @@
 		F70A03E0262A0E000016250F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F70A03E3262A0E000016250F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F70A03E5262A0E000016250F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F75952FF262C8B7C00AF9A0A /* ETSPhoneTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETSPhoneTextField.swift; sourceTree = "<group>"; };
+		F7595308262CB6F300AF9A0A /* PhoneNumberFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberFormat.swift; sourceTree = "<group>"; };
 		F7991AF5262A3194003CE562 /* PersonData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonData.swift; sourceTree = "<group>"; };
 		F7991AF8262A3210003CE562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F7991AFD262A3629003CE562 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
@@ -172,6 +176,25 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F759530B262CCBB800AF9A0A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F7991B3E262B10A2003CE562 /* Date+Extensitons.swift */,
+				F7991B43262B2665003CE562 /* String+Extensions.swift */,
+				F7991D21262B8814003CE562 /* TextField+Extentions.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F759530D262CCBCB00AF9A0A /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				F7595308262CB6F300AF9A0A /* PhoneNumberFormat.swift */,
+				F7991B46262B2825003CE562 /* RegexPattern.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		F7991AFC262A3619003CE562 /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -204,10 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				F7991B76262B64CB003CE562 /* Font Face */,
-				F7991B3E262B10A2003CE562 /* Date+Extensitons.swift */,
-				F7991B43262B2665003CE562 /* String+Extensions.swift */,
-				F7991B46262B2825003CE562 /* RegexPattern.swift */,
-				F7991D21262B8814003CE562 /* TextField+Extentions.swift */,
+				F759530B262CCBB800AF9A0A /* Extension */,
+				F759530D262CCBCB00AF9A0A /* Util */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -313,6 +334,7 @@
 			children = (
 				F7991D0A262B70D5003CE562 /* ETSLabelPhoneTextFieldView.swift */,
 				F7991D0E262B70DB003CE562 /* ETSLabelPhoneTextFieldView.xib */,
+				F75952FF262C8B7C00AF9A0A /* ETSPhoneTextField.swift */,
 			);
 			path = ETSLabelPhoneTextFieldView;
 			sourceTree = "<group>";
@@ -456,6 +478,7 @@
 				F7991B1E262B013C003CE562 /* ETSGradientButton.swift in Sources */,
 				F7991B0D262AF871003CE562 /* PersonDetailVC.swift in Sources */,
 				F7991B3B262B0CEF003CE562 /* PersonDetailViewModel.swift in Sources */,
+				F7595300262C8B7C00AF9A0A /* ETSPhoneTextField.swift in Sources */,
 				F70A03D8262A0DFF0016250F /* AppDelegate.swift in Sources */,
 				F7991D0B262B70D5003CE562 /* ETSLabelPhoneTextFieldView.swift in Sources */,
 				F7991B78262B64DC003CE562 /* FontFace.swift in Sources */,
@@ -463,6 +486,7 @@
 				F7991D22262B8814003CE562 /* TextField+Extentions.swift in Sources */,
 				F7991AFF262A3629003CE562 /* PersonTableViewCell.swift in Sources */,
 				F7991AF9262A3210003CE562 /* HomeViewModel.swift in Sources */,
+				F7595309262CB6F300AF9A0A /* PhoneNumberFormat.swift in Sources */,
 				F7991B47262B2825003CE562 /* RegexPattern.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
